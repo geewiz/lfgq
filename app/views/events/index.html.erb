@@ -1,0 +1,14 @@
+<h1>LFGQ Events</h1>
+
+<%= link_to "Create a new event", new_event_path %>
+
+<ul>
+<% @events.each do |event| %>
+<li><%= link_to event.title, event_path(event.id) %> (
+  <% event.event_roles.each do |role| %>
+    <%= role.amount %>x <%= role.name %>,
+  <% end %>
+)
+</li>
+<% end %>
+</ul>
