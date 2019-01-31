@@ -1,14 +1,16 @@
 FactoryBot.define do
-  factory :event_role do
-    event_id { nil }
-    name { "MyString" }
-    amount { 1 }
-  end
   factory :event do
-    title { "MyString" }
-    time { "2019-01-29 16:04:41" }
-    description { "MyString" }
-    rw_url { "MyString" }
-    ro_url { "MyString" }
+    title { "Test event" }
+    date { "2019-01-29" }
+    time { "16:00:00" }
+    description { "Event description" }
+    rw_url { "owner-url" }
+    ro_url { "participant-url" }
+  end
+
+  factory :event_role do
+    event
+    name { "Role name" }
+    amount { 1 }
   end
 end
