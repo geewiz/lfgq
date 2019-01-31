@@ -19,6 +19,6 @@ class EventsController < ApplicationController
   private
 
   def secure_params
-    params.require(:event).permit(:title, :description)
+    params.require(:event).permit(:title, :description, :date, :time)
   end
 end

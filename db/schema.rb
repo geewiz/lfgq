@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_29_160712) do
+ActiveRecord::Schema.define(version: 2019_01_31_160336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,12 +41,13 @@ ActiveRecord::Schema.define(version: 2019_01_29_160712) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
-    t.datetime "time"
     t.string "description"
     t.string "rw_url"
     t.string "ro_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
+    t.time "time"
   end
 
   add_foreign_key "event_roles", "events"
